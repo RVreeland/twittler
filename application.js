@@ -19,5 +19,6 @@ $(document).ready(function() {
     var $tweet = $('<li></li>');
     $tweet.text('@' + tweet.user + ': ' + tweet.message);
     $tweet.appendTo($('.tweetlist'));
+    index -= 1;
   }
 });
