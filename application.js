@@ -1,31 +1,20 @@
 
-// $(document).ready(function(){
-//   var $body = $('body');
-//   $body.html(''); 
-//   var index = streams.home.length - 1;
-//   while(index >= 0){
-//     var tweet = streams.home[index];
-//     var $tweet = $('<div></div>');
-//     $tweet.text('@' + tweet.user + ': ' + tweet.message);
-//     $tweet.appendTo($body);
-//     index -= 1;
-//   }
-// });
-
 $(document).ready(function() {
 
-
   var displayNew = function() {
-    var index = streams.home.length -1;
-    while(index >=0){
-      var tweet = streams.home[index];
+    var lastTweet = -1; 
+    var numTweets = streams.home.length - 1;
+
+    for (var i = lastTweet + 1; i <= numTweets; i++ ) {
+      var tweet = streams.home[i];
       var $tweet = $('<li></li>');
-      $tweet.text('@' + tweet.user + ': ' + tweet.message + " " + tweet.created_at + " " + index);
-      $tweet.appendTo($('.tweetlist'));
-      index -= 1;
+      $tweet.text('@' + tweet.user + ': ' + tweet.message + " " + tweet.created_at + " " + i);
+      $tweet.prependTo($('.tweetlist')); 
     }
-    lastTweet = index;
-};
+
+    lastTweet = numTweets;
+
+  };
 
   displayNew();
 
