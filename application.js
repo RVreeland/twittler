@@ -1,9 +1,12 @@
 
 $(document).ready(function() {
 
+  var username = "Joaquin HM"
+
 //Display tweets on document load. Refresh button displays only new tweets. 
+  var lastTweet = -1; 
+  
   var displayNew = function() {
-    var lastTweet = -1; 
     var numTweets = streams.home.length - 1;
 
     for (var i = lastTweet + 1; i <= numTweets; i++ ) {
@@ -13,7 +16,7 @@ $(document).ready(function() {
       $tweet.prependTo($('.tweetlist')); 
     }
 
-    lastTweet = numTweets;
+    return lastTweet = numTweets;
 
   };
 
@@ -31,6 +34,13 @@ $(document).ready(function() {
     $user.appendTo($('.following'));
   }
 
+//Lets user submit tweets.
+  $('button .user_tweet').on('click', function() {
+    var userInput = $('input').val();
+    var $userTweet = $('<li></li>');
+    $userTweet.text('@' + username + ': ' +  userInput);
+    $userTweet.prependTo($('.tweetlist'));
+  })
 
 });
 
