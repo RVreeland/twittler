@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
+    <meta charset="utf-8">
+    <title> Twittler </title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flexbox.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <script>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+    <header>
+      <h1>Twittler</h1>
+      <h2>Set your inner thoughts free.</h2>
+    </header>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+    <div id= "page-wrap">
 
-      });
+    <div class="main">
 
-    </script>
+      <div class = "sidebar">
+
+        <form>
+          <input type="text" id="tweet" name="tweet">
+          <button type="submit" class="tweet">Release!</button>
+        </form>
+
+        <img src="img/rv_sm.jpg" alt="profile_pic" class="profile-photo">
+        <p>Joaquin HM</p>
+
+        <p>Those of interest:</p> 
+        <ul>
+          <li>Name here</li>
+        </ul>
+
+      </div>
+
+      <div class = "feed">
+        <button type="button" class="refresh_tweets">What's new?</button>
+        <ul class = "tweetlist">
+          <li>example tweet. This is a really long example tweet to see what happens.</li>
+          <li>example tweet</li>
+          <li>another tweet</li>
+        </ul>
+      </div>
+
+    </div>
+
+    </div>
+
+    <footer>
+      <p> footer here </p>
+    </footer>
+<!--
+  <script src="jquery.js"></script>
+  <script src="data_generator.js"></script>
+  <script src="application.js"></script>
+-->
   </body>
 </html>
