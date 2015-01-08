@@ -1,0 +1,92 @@
+* {
+ margin: 0; padding: 0; 
+}
+
+body {
+    background: #282828;
+}    
+
+h1, h2 { 
+    padding: 10px;
+    color: white;
+}
+
+#page-wrap { 
+    max-width: 940px;
+    margin: 0 auto; 
+    padding: 0 5%;
+    background: lightblue;
+}
+
+header { 
+    max-width: 960px; 
+    min-width: 560px; 
+    background: black;
+    margin: 15px auto 0;
+}
+
+/****************************************
+LEFT SIDEBAR
+****************************************/
+
+.sidebar { 
+background: #eee;
+margin: 2%;
+padding: 2%;
+border-radius: 20px;
+}
+
+form    {
+
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 90%;
+    height: 40px;
+}
+
+button .tweet {
+    
+}
+
+.profile-photo {
+  display: block;
+  max-width: 150px;
+  margin: 30px auto 30px;
+  border-radius: 30%;
+}
+
+/****************************************
+FEED COLUMN
+****************************************/
+
+.feed {
+    margin: 2%;
+    padding: 2%;
+    background: white; 
+    border-radius: 20px;
+ }
+
+.refresh_tweets {
+    display: block;
+    border-radius: 5px;
+    padding: 5px;
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+.tweetlist li {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    background: tomato;
+    color: #FFF;
+
+}
+
+footer             { max-width: 960px; min-width: 560px; background: #222;
+                      margin: 0 auto 15px; }
