@@ -35,8 +35,10 @@ $(document).ready(function() {
   }
 
 //Lets user submit tweets.
-  $('button .user_tweet').on('click', function() {
-    var userInput = $('input').val();
+
+
+  $('#user_tweet').on('click', function() {
+    var userInput = $('#user_text').val();
     var $userTweet = $('<li></li>');
     $userTweet.text('@' + username + ': ' +  userInput);
     $userTweet.prependTo($('.tweetlist'));
