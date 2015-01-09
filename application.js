@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-  var username = "Joaquin HM"
+  var thisuser = "Joaquin HM"
 
 //Display tweets on document load. Refresh button displays only new tweets. 
   var lastTweet = -1; 
@@ -11,8 +11,12 @@ $(document).ready(function() {
 
     for (var i = lastTweet + 1; i <= numTweets; i++ ) {
       var tweet = streams.home[i];
-      var $tweet = $('<li></li>');
-      $tweet.text('@' + tweet.user + ': ' + tweet.message + " " + tweet.created_at + " " + i);
+      var user = tweet.user;
+      var span = '<span' + ' class="' + user + '">' + '@' + user + '</span>'; 
+      // // var $tweet = $('<li></li>'); 
+      // // $tweet.text(': ' + tweet.message + " " + tweet.created_at + " " + i);
+      // var $tweet = $('<li>' + span + '</li>');
+      $tweet = $('<li>' + span + ": " + tweet.message + " " + tweet.created_at + " " + i + '</li>');
       $tweet.prependTo($('.tweetlist')); 
     }
 
@@ -40,7 +44,7 @@ $(document).ready(function() {
   $('#user_tweet').on('click', function() {
     var userInput = $('#user_text').val();
     var $userTweet = $('<li></li>');
-    $userTweet.text('@' + username + ': ' +  userInput);
+    $userTweet.text('@' + thisuser + ': ' +  userInput);
     $userTweet.prependTo($('.tweetlist'));
   })
 

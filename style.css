@@ -88,5 +88,9 @@ FEED COLUMN
 
 }
 
+span {
+    color: black;
+}
+
 footer             { max-width: 960px; min-width: 560px; background: #222;
                       margin: 0 auto 15px; }
