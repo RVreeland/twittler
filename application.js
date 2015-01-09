@@ -6,11 +6,11 @@ $(document).ready(function() {
 //Display tweets on document load. Refresh button displays only new tweets. 
   var lastTweet = -1; 
   
-  var displayNew = function() {
-    var numTweets = streams.home.length - 1;
+  var displayNew = function(tweetlist) {
+    var numTweets = tweetlist.length - 1;
 
     for (var i = lastTweet + 1; i <= numTweets; i++ ) {
-      var tweet = streams.home[i];
+      var tweet = tweetlist[i];
       var user = tweet.user;
       var span = '<span' + ' class="' + user + '">' + '@' + user + '</span>'; 
       // // var $tweet = $('<li></li>'); 
@@ -24,10 +24,10 @@ $(document).ready(function() {
 
   };
 
-  displayNew();
+  displayNew(streams.home);
 
   $('.refresh_tweets').on('click', function() {
-    displayNew();
+    displayNew(streams.home);
   })
 
 //Populate "Those of interest" field with users. (following)
@@ -49,4 +49,11 @@ $(document).ready(function() {
   })
 
 });
+
+//Displays user tweets when username is clicked.
+
+$('span').on('click', function() {
+  $('.tweetlist').remove();
+
+})
 
