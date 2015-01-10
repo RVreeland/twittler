@@ -2,6 +2,10 @@
 $(document).ready(function() {
 
   var thisuser = "Joaquin HM"
+  var $thisuser = $('<p class="username ' + thisuser + '"">' + thisuser + '<p>');
+  $('.profile-photo').after($thisuser);
+
+
 
 //Display tweets on document load. Refresh button displays only new tweets. 
   var lastTweet = -1; 
@@ -74,4 +78,5 @@ $('body').on('click', '.username', function() {
     }
 
 });
+
 
