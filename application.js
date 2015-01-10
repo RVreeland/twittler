@@ -35,7 +35,7 @@ $(document).ready(function() {
 //Populate "Those of interest" field with users. (following)
   for (var i = 0; i < users.length; i++) {
     var user = users[i];
-    var $user = $('<li></li>');
+    var $user = $('<li class="' + user + ' username"></li>');
     $user.text(user);
     $user.appendTo($('.following'));
   }
@@ -54,7 +54,8 @@ $(document).ready(function() {
 
 //Displays user tweets when username is clicked.
 
-$('.tweetlist').on('click', '.username', function() {
+$('body').on('click', '.username', function() {
+  // console.log($(this));
   var username = $(this)[0].classList[0];
   $('.tweetlist div').hide();
   var tweetlist = streams["users"][username];
