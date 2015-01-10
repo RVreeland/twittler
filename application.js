@@ -12,11 +12,11 @@ $(document).ready(function() {
     for (var i = lastTweet + 1; i <= numTweets; i++ ) {
       var tweet = tweetlist[i];
       var user = tweet.user;
-      var span = '<span' + ' class="' + user + '">' + '@' + user + '</span>'; 
+      var span = '<span' + ' class="' + user + ' username">' + '@' + user + '</span>'; 
       // // var $tweet = $('<li></li>'); 
       // // $tweet.text(': ' + tweet.message + " " + tweet.created_at + " " + i);
       // var $tweet = $('<li>' + span + '</li>');
-      $tweet = $('<li>' + span + ": " + tweet.message + " " + tweet.created_at + " " + i + '</li>');
+      $tweet = $('<div class="allTweetList">' + span + ": " + tweet.message + " " + tweet.created_at + " " + i + '</div>');
       $tweet.prependTo($('.tweetlist')); 
     }
 
@@ -27,6 +27,8 @@ $(document).ready(function() {
   displayNew(streams.home);
 
   $('.refresh_tweets').on('click', function() {
+    $('.tweetlist .userTweetList').remove();
+    $('.tweetlist div').show();
     displayNew(streams.home);
   })
 
@@ -52,8 +54,23 @@ $(document).ready(function() {
 
 //Displays user tweets when username is clicked.
 
-$('span').on('click', function() {
-  $('.tweetlist').remove();
+$('.tweetlist').on('click', '.username', function() {
+  var username = $(this)[0].classList[0];
+  $('.tweetlist div').hide();
+  var tweetlist = streams["users"][username];
+  // displayNew(usertweets);
+      var numTweets = tweetlist.length - 1;
 
-})
+    for (var i = 0; i <= numTweets; i++ ) {
+      var tweet = tweetlist[i];
+      var user = tweet.user;
+      var span = '<span' + ' class="' + user + ' username">' + '@' + user + '</span>'; 
+      // // var $tweet = $('<li></li>'); 
+      // // $tweet.text(': ' + tweet.message + " " + tweet.created_at + " " + i);
+      // var $tweet = $('<li>' + span + '</li>');
+      $tweet = $('<div class ="userTweetList">' + span + ": " + tweet.message + " " + tweet.created_at + " " + i + '</div>');
+      $tweet.prependTo($('.tweetlist')); 
+    }
+
+});
 

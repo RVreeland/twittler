@@ -4,11 +4,11 @@
 }
 
 .sidebar {
-    flex-grow: 2;
+    flex-grow: 3;
 }
 
 .feed {
-    flex-grow: 3;
+    flex-grow: 4;
 }
 
 .
