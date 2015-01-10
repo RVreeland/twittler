@@ -4,10 +4,12 @@
 }
 
 .sidebar {
+    min-width: 170px;
     flex-grow: 3;
 }
 
 .feed {
+    min-width: 250px;
     flex-grow: 4;
 }
 
