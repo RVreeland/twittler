@@ -1,9 +1,11 @@
 
 $(document).ready(function() {
 
-  var thisuser = "Joaquin HM"
-  var $thisuser = $('<p class="username ' + thisuser + '"">' + thisuser + '<p>');
-  $('.profile-photo').after($thisuser);
+  window.visitor = "Joaquin_HM";
+  window["streams"]["users"][visitor] = [];
+
+  // var $visitorName = $('<p class="username ' + visitor + '"">' + visitor + '<p>');
+  // $('.profile-photo').after($visitorName);
 
 
 
@@ -46,13 +48,16 @@ $(document).ready(function() {
 
 //Lets user submit tweets.
 
+$('#user_tweet').on('click', function() {
+  var userInput = $('#user_text').val();
+  writeTweet(userInput);
+  $('#user_text').val('');
+});
 
-  $('#user_tweet').on('click', function() {
-    var userInput = $('#user_text').val();
-    var $userTweet = $('<li></li>');
-    $userTweet.text('@' + thisuser + ': ' +  userInput);
-    $userTweet.prependTo($('.tweetlist'));
-  })
+
+
+
+
 
 });
 
