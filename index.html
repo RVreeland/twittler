@@ -22,10 +22,10 @@
 
       <div class = "sidebar">
 
-        <form>
-          <input type="text" id="user_text" name="tweet">
+<!--         <form>
+          <input type="text" id="user_text" name="tweet" placeholder="What do you want the world to know?">
           <button type="button" id="user_tweet">Share</button>
-        </form>
+        </form> -->
 
         <img src="img/rv_sm.jpg" alt="profile_pic" class="profile-photo">
 
@@ -37,6 +37,12 @@
       </div>
 
       <div class = "feed">
+
+        <form id="user_submit">
+          <input type="text" id="user_text" name="tweet" placeholder="What do you want the world to know?">
+          <!-- <button type="button" id="user_tweet">Share</button> -->
+        </form>
+
         <button type="button" class="refresh_tweets">What's new?</button>
         <div class = "tweetlist">
         </div>

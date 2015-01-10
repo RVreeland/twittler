@@ -49,13 +49,21 @@ $(document).ready(function() {
 
 //Lets user submit tweets.
 
-$('#user_tweet').on('click', function() {
-  var userInput = $('#user_text').val();
-  writeTweet(userInput);
-  $('#user_text').val('');
+// $('#user_tweet').on('click', function() {
+//   var userInput = $('#user_text').val();
+//   writeTweet(userInput);
+//   $('#user_text').val('');
+// });
+
+$('form').on('keypress', function(event) {
+  if (event.which == 13) {
+    event.preventDefault();
+    var userInput = $('#user_text').val();
+    writeTweet(userInput);
+    $('#user_text').val('');
+    return false;
+  }
 });
-
-
 
 
 
