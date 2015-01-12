@@ -17,7 +17,7 @@ h1, h2 {
     max-width: 940px;
     margin: 0 auto; 
     padding: 0 5%;
-    background: lightblue;
+/*    background: lightblue;*/
 }
 
 header { 
@@ -87,6 +87,9 @@ button.refresh_tweets {
     padding: 5px;
     width: 50%;
     margin: 10px auto 5px;
+    background: #FFCC00;
+    border: none;
+    color: #fff;
 
 }
 
@@ -94,13 +97,19 @@ button.refresh_tweets {
     margin: 10px;
     padding: 5px;
     border-radius: 10px;
-    background: tomato;
-    color: #FFF;
+    background: white;
+/*    border-top: 1px solid #bbb;*/
 
 }
 
-span {
-    color: black;
+span.username {
+    color: #FF0066;
+    font-weight: bold;
+}
+
+.time {
+    color: #00CCFF;
+    font-size: 0.70em;
 }
 
 footer             { max-width: 960px; min-width: 560px; background: #222;

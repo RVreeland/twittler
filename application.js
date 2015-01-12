@@ -23,8 +23,8 @@ $(document).ready(function() {
       // // var $tweet = $('<li></li>'); 
       // // $tweet.text(': ' + tweet.message + " " + tweet.created_at + " " + i);
       // var $tweet = $('<li>' + span + '</li>');
-      var time = '<span data-livestamp=' + Date.parse(tweet.created_at)/1000 + '></span>'
-      $tweet = $('<div class="allTweetList">' + span + ': ' + tweet.message + ' ' + time + ' ' + i + '</div>');
+      var time = '<span class="time" data-livestamp=' + Date.parse(tweet.created_at)/1000 + '></span>'
+      $tweet = $('<div class="allTweetList">' + span + ': ' + tweet.message + ' ' + time + '</div>');
       $tweet.prependTo($('.tweetlist')); 
     }
 
