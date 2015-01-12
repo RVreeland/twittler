@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-  jQuery("abbr.timeago").timeago();
+  // jQuery("abbr.timeago").timeago();
 
   window.visitor = "Joaquin_HM";
   window["streams"]["users"][visitor] = [];
@@ -23,7 +23,8 @@ $(document).ready(function() {
       // // var $tweet = $('<li></li>'); 
       // // $tweet.text(': ' + tweet.message + " " + tweet.created_at + " " + i);
       // var $tweet = $('<li>' + span + '</li>');
-      $tweet = $('<div class="allTweetList">' + span + ": " + tweet.message + " " + jQuery.timeago(tweet.created_at) + " " + i + '</div>');
+      var time = '<span data-livestamp=' + Date.parse(tweet.created_at)/1000 + '></span>'
+      $tweet = $('<div class="allTweetList">' + span + ': ' + tweet.message + ' ' + time + ' ' + i + '</div>');
       $tweet.prependTo($('.tweetlist')); 
     }
 
