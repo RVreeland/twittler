@@ -9,6 +9,8 @@ body {
 h1, h2 { 
     padding: 10px;
     color: white;
+    font-size: 2.25em;
+    margin: 0 20px;
 }
 
 #page-wrap { 
@@ -22,8 +24,9 @@ header {
     max-width: 960px; 
     min-width: 560px; 
     background: black;
-    margin: 15px auto 0;
+    margin: 0 auto ;
 }
+
 
 /****************************************
 LEFT SIDEBAR
@@ -36,30 +39,33 @@ padding: 2%;
 border-radius: 20px;
 }
 
-form    {
-
-}
-
 input {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 7px auto;
     border-radius: 5px;
     width: 90%;
     height: 40px;
 }
 
-button#user_tweet {
-    color: blue;
-    
-}
-
 .profile-photo {
   display: block;
   max-width: 150px;
-  margin: 30px auto 30px;
+  margin: 3px auto ;
   border-radius: 30%;
 }
 
+h4 {
+    text-align: center;
+    margin: 5px auto;
+}
+
+.display_name {
+    text-align: center;
+}
+
+ul.following {
+    margin: 5px auto;
+}
 /****************************************
 FEED COLUMN
 ****************************************/
@@ -71,12 +77,16 @@ FEED COLUMN
     border-radius: 20px;
  }
 
+ #user_text {
+    height: 30px;
+ }
+
 button.refresh_tweets {
     display: block;
     border-radius: 5px;
     padding: 5px;
     width: 50%;
-    margin: 0 auto;
+    margin: 10px auto 5px;
 
 }
 

@@ -5,8 +5,8 @@ $(document).ready(function() {
   window.visitor = "Joaquin_HM";
   window["streams"]["users"][visitor] = [];
 
-  // var $visitorName = $('<p class="username ' + visitor + '"">' + visitor + '<p>');
-  // $('.profile-photo').after($visitorName);
+  var $visitorName = $('<p class=" ' + visitor + ' username display_name"">' + visitor + '<p>');
+  $('.profile-photo').after($visitorName);
 
 
 
