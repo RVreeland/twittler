@@ -24,7 +24,7 @@ $(document).ready(function() {
       // // $tweet.text(': ' + tweet.message + " " + tweet.created_at + " " + i);
       // var $tweet = $('<li>' + span + '</li>');
       var time = '<span class="time" data-livestamp=' + Date.parse(tweet.created_at)/1000 + '></span>'
-      $tweet = $('<div class="allTweetList">' + span + ': ' + tweet.message + ' ' + time + '</div>');
+      $tweet = $('<div class="allTweetList">' + span + ' ' + time + '<br>' + tweet.message + '</div>');
       $tweet.prependTo($('.tweetlist')); 
     }
 

@@ -4,13 +4,16 @@
 
 body {
     background: #282828;
+    font-family: 'Roboto', sans-serif;
 }    
 
 h1, h2 { 
     padding: 10px;
     color: white;
+    font-family: 'Open Sans', sans-serif;
     font-size: 2.25em;
-    margin: 0 20px;
+    font-weight: 800;
+    margin: 0 50px;
 }
 
 #page-wrap { 
@@ -21,10 +24,21 @@ h1, h2 {
 }
 
 header { 
-    max-width: 960px; 
+/*    max-width: 960px; */
     min-width: 560px; 
     background: black;
     margin: 0 auto ;
+    height: 95px;
+}
+
+.bird {
+    background: black;
+/*    position: relative;*/
+    vertical-align: middle;
+/*    top: -55px;
+    left: 200px;*/
+    height: 70px;
+    margin: 0 20px;
 }
 
 
@@ -39,14 +53,6 @@ padding: 2%;
 border-radius: 20px;
 }
 
-input {
-    display: block;
-    margin: 0 auto 7px auto;
-    border-radius: 5px;
-    width: 90%;
-    height: 40px;
-}
-
 .profile-photo {
   display: block;
   max-width: 150px;
@@ -55,16 +61,18 @@ input {
 }
 
 h4 {
-    text-align: center;
+    text-align: left;
     margin: 5px auto;
 }
 
-.display_name {
-    text-align: center;
+.following {
+    list-style: none;
+    padding-left: 0;
 }
 
 ul.following {
     margin: 5px auto;
+    line-height: 1.5;
 }
 /****************************************
 FEED COLUMN
@@ -77,6 +85,14 @@ FEED COLUMN
     border-radius: 20px;
  }
 
+ input {
+    display: block;
+    margin: 0 auto 7px auto;
+    border-radius: 5px;
+    width: 90%;
+    height: 40px;
+}
+
  #user_text {
     height: 30px;
  }
@@ -86,10 +102,12 @@ button.refresh_tweets {
     border-radius: 5px;
     padding: 5px;
     width: 50%;
+    min-width: 135px;
     margin: 10px auto 5px;
     background: #FFCC00;
     border: none;
     color: #fff;
+    font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -98,13 +116,14 @@ button.refresh_tweets {
     padding: 5px;
     border-radius: 10px;
     background: white;
+    line-height: 1.5;
 /*    border-top: 1px solid #bbb;*/
 
 }
 
-span.username {
+span.username, .username {
     color: #FF0066;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .time {
@@ -112,5 +131,11 @@ span.username {
     font-size: 0.70em;
 }
 
+.display_name {
+    text-align: center;
+    color: black;
+}
+
 footer             { max-width: 960px; min-width: 560px; background: #222;
                       margin: 0 auto 15px; }
+

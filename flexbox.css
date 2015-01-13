@@ -5,6 +5,7 @@
 
 .sidebar {
     min-width: 170px;
+    max-width: 200px;
     flex-grow: 3;
 }
 
@@ -13,4 +14,3 @@
     flex-grow: 4;
 }
 
-.
