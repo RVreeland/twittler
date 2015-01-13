@@ -1,6 +1,5 @@
 
 $(document).ready(function() {
-  // jQuery("abbr.timeago").timeago();
 
   window.visitor = "Joaquin_HM";
   window["streams"]["users"][visitor] = [];
@@ -10,9 +9,7 @@ $(document).ready(function() {
 
 
 
-//Display tweets on document load. Refresh button displays only new tweets. 
-  var lastTweet = -1; 
-  
+  //Function for creating a tweet list. listClass was added as a parameter so that tweets can have the class of allTweetList or userTweetList.
   var displayTweets = function(tweetlist, lastIndex, listClass) {
      var numTweets = tweetlist.length - 1;
 
@@ -27,20 +24,23 @@ $(document).ready(function() {
       return numTweets;
   };
 
+  //Display all tweets on load. 
+  var lastTweet = -1; 
+
   var displayAllTweets = function() {
     return lastTweet = displayTweets(streams.home, lastTweet, "allTweetList");
   };
 
   displayAllTweets();
 
-
+  //On clicking 'See What's New' button, new tweets are displayed. 
   $('.refresh_tweets').on('click', function() {
     $('.tweetlist .userTweetList').remove();
     $('.tweetlist div').show();
     displayAllTweets();
-  })
+  });
 
-  //Populate "Those of interest" field with users. (following)
+  //Populate "Those of interest" list with users. (following)
   for (var i = 0; i < users.length; i++) {
     var user = users[i];
     var $user = $('<li class="' + user + ' username"></li>');
@@ -48,13 +48,7 @@ $(document).ready(function() {
     $user.appendTo($('.following'));
   }
 
-  //Lets user submit tweets.
-
-  // $('#user_tweet').on('click', function() {
-  //   var userInput = $('#user_text').val();
-  //   writeTweet(userInput);
-  //   $('#user_text').val('');
-  // });
+  //Lets user submit tweets. Tweets are submitted with enter key. 
 
   $('form').on('keypress', function(event) {
     if (event.which == 13) {
@@ -67,7 +61,7 @@ $(document).ready(function() {
   });
 
 
-  //Displays user tweets when username is clicked.
+  //Displays user tweets when username is clicked. First hides all user tweet list. 
 
   $('body').on('click', '.username', function() {
     var username = $(this)[0].classList[0];
@@ -80,7 +74,6 @@ $(document).ready(function() {
     } else  {
       displayTweets(tweetlist, -1, "userTweetList");
     }
-
   });
 
 });

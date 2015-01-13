@@ -1,13 +1,15 @@
 * {
  margin: 0; padding: 0; 
+ color: #282828;
 }
 
 body {
     background: #282828;
     font-family: 'Roboto', sans-serif;
+
 }    
 
-h1, h2 { 
+h1 { 
     padding: 10px;
     color: white;
     font-family: 'Open Sans', sans-serif;
@@ -20,11 +22,9 @@ h1, h2 {
     max-width: 940px;
     margin: 0 auto; 
     padding: 0 5%;
-/*    background: lightblue;*/
 }
 
 header { 
-/*    max-width: 960px; */
     min-width: 560px; 
     background: black;
     margin: 0 auto ;
@@ -33,21 +33,21 @@ header {
 
 .bird {
     background: black;
-/*    position: relative;*/
     vertical-align: middle;
-/*    top: -55px;
-    left: 200px;*/
     height: 70px;
     margin: 0 20px;
 }
 
+.username {
+    cursor: pointer;
+}
 
 /****************************************
 LEFT SIDEBAR
 ****************************************/
 
 .sidebar { 
-background: #eee;
+background: #fff;
 margin: 2%;
 padding: 2%;
 border-radius: 20px;
@@ -74,6 +74,7 @@ ul.following {
     margin: 5px auto;
     line-height: 1.5;
 }
+
 /****************************************
 FEED COLUMN
 ****************************************/
@@ -134,9 +135,7 @@ span.username, .username {
 
 .display_name {
     text-align: center;
-    color: black;
+    color: #282828;
+    font-size: 1.25em;
+    margin: 10px auto 20px auto;
 }
-
-footer             { max-width: 960px; min-width: 560px; background: #222;
-                      margin: 0 auto 15px; }
-
