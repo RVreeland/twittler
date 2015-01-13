@@ -20,19 +20,20 @@ h1 {
 
 #page-wrap { 
     max-width: 940px;
-    margin: 0 auto; 
+    margin: -5px 0 auto; 
     padding: 0 5%;
 }
 
 header { 
     min-width: 560px; 
-    background: black;
+/*    background: black;*/
     margin: 0 auto ;
     height: 95px;
+    padding-left: 10px;
 }
 
 .bird {
-    background: black;
+/*    background: black;*/
     vertical-align: middle;
     height: 70px;
     margin: 0 20px;
