@@ -13,7 +13,7 @@ $(document).ready(function() {
 //Display tweets on document load. Refresh button displays only new tweets. 
   var lastTweet = -1; 
   
-  var displayTweets = function(tweetlist, lastIndex) {
+  var displayTweets = function(tweetlist, lastIndex, listClass) {
      var numTweets = tweetlist.length - 1;
 
       for (var i = lastIndex + 1; i <= numTweets; i++ ) {
@@ -21,14 +21,14 @@ $(document).ready(function() {
         var user = tweet.user;
         var span = '<span' + ' class="' + user + ' username">' + '@' + user + '</span>'; 
         var time = '<span class="time" data-livestamp=' + Date.parse(tweet.created_at)/1000 + '></span>'
-        $tweet = $('<div class="allTweetList">' + span + ' ' + time + '<br>' + tweet.message + '</div>');
+        $tweet = $('<div class="' + listClass + '">' + span + ' ' + time + '<br>' + tweet.message + i + '</div>');
         $tweet.prependTo($('.tweetlist')); 
       }
       return numTweets;
   };
 
   var displayAllTweets = function() {
-    return lastTweet = displayTweets(streams.home, lastTweet);
+    return lastTweet = displayTweets(streams.home, lastTweet, "allTweetList");
   };
 
   displayAllTweets();
@@ -37,7 +37,7 @@ $(document).ready(function() {
   $('.refresh_tweets').on('click', function() {
     $('.tweetlist .userTweetList').remove();
     $('.tweetlist div').show();
-    displayTweets(streams.home);
+    displayAllTweets();
   })
 
   //Populate "Those of interest" field with users. (following)
@@ -78,7 +78,7 @@ $(document).ready(function() {
       $noTweets = $(noTweets);
       $noTweets.prependTo($('.tweetlist'));
     } else  {
-      displayTweets(tweetlist, -1);
+      displayTweets(tweetlist, -1, "userTweetList");
     }
 
   });
