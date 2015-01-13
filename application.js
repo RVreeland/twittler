@@ -18,7 +18,7 @@ $(document).ready(function() {
         var user = tweet.user;
         var span = '<span' + ' class="' + user + ' username">' + '@' + user + '</span>'; 
         var time = '<span class="time" data-livestamp=' + Date.parse(tweet.created_at)/1000 + '></span>'
-        $tweet = $('<div class="' + listClass + '">' + span + ' ' + time + '<br>' + tweet.message + i + '</div>');
+        $tweet = $('<div class="' + listClass + '">' + span + ' ' + time + '<br>' + tweet.message + '</div>');
         $tweet.prependTo($('.tweetlist')); 
       }
       return numTweets;
